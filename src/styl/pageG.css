@@ -1,0 +1,193 @@
+/* Gaya untuk Halaman Game (Draft Simulator) */
+.game-page-container {
+  padding: 16px;
+  color: var(--text-color-light);
+  overflow: hidden; /* Prevent content from breaking the main layout */
+}
+
+[data-theme="dark"] .game-page-container {
+  color: var(--text-color-dark);
+}
+
+.draft-simulator {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Team Display Styles */
+.team-display {
+  padding: 10px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow-x: auto; /* Allow horizontal scrolling if needed */
+}
+
+[data-theme="dark"] .team-display {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.team-display h2 {
+  margin: 0 0 16px 0;
+  font-size: 18px;
+  text-align: center;
+}
+
+.team-slots {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  min-width: 300px; /* Ensure a minimum width to prevent squishing */
+}
+
+.hero-slot {
+  width: 100%;
+  padding-bottom: 99%; /* Square aspect ratio */
+  border-radius: 8px;
+  background-color: rgba(0,0,0,0.1);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px dashed rgba(0,0,0,0.2);
+}
+
+[data-theme="dark"] .hero-slot {
+  background-color: rgba(255,255,255,0.1);
+  border: 1px dashed rgba(255,255,255,0.2);
+}
+
+.hero-slot .hero-name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.6);
+  color: white;
+  font-size: 10px;
+  padding: 2px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Hero Pool Styles */
+.hero-pool {
+  padding: 10px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] .hero-pool {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-pool h3 {
+  margin: 0 0 15px 0;
+  font-size: 16px;
+  text-align: center;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  gap: 10px;
+  max-height: 210px;
+  overflow-y: auto;
+  padding-right: 1px; /* For scrollbar */
+}
+
+.hero-card {
+  width: 100%;
+  padding-bottom: 100%;
+  border-radius: 8px;
+  background-color: rgba(0,0,0,0.1);
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+  position: relative;
+}
+
+.hero-card.selected {
+  border-color: var(--tab-active-light);
+  transform: scale(1.05);
+}
+
+.hero-card.picked {
+  filter: grayscale(100%);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Draft Controls */
+.draft-controls {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] .draft-controls {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.draft-btn {
+  flex-grow: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pick-btn {
+  background: linear-gradient(45deg, #25D366, #128C7E);
+  color: white;
+}
+
+.pick-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.reset-btn {
+  background-color: #e4e6eb;
+  color: #050505;
+}
+
+[data-theme="dark"] .reset-btn {
+  background-color: #3a3b3c;
+  color: #e4e6eb;
+}
+
+.turn-indicator {
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: rgba(0,0,0,0.05);
+}
+
+[data-theme="dark"] .turn-indicator {
+  background-color: rgba(255,255,255,0.05);
+}

@@ -1,0 +1,82 @@
+/* =================================================================
+ * GLOBAL STYLESHEET (SINGLE SOURCE OF TRUTH)
+ * ================================================================= */
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* --- Light Theme --- */
+  --bg-primary-light: #f0f2f5;
+  --bg-secondary-light: #ffffff;
+  --text-primary-light: #050505;
+  --text-secondary-light: #65676b;
+  --border-primary-light: #ced0d4;
+  --accent-primary-light: #1877f2;
+
+  /* --- Dark Theme --- */
+  --bg-primary-dark: #18191a;
+  --bg-secondary-dark: #242526;
+  --text-primary-dark: #e4e6eb;
+  --text-secondary-dark: #b0b3b8;
+  --border-primary-dark: #3a3b3c;
+  --accent-primary-dark: #2d88ff;
+  
+  /* Fallback defaults */
+  --nav-text-light: var(--text-primary-light);
+  --tab-text-light: var(--text-secondary-light);
+  --post-bg-light: var(--bg-secondary-light);
+  --post-border-light: var(--border-primary-light);
+
+  --nav-text-dark: var(--text-primary-dark);
+  --tab-text-dark: var(--text-secondary-dark);
+  --post-bg-dark: var(--bg-secondary-dark);
+  --post-border-dark: var(--border-primary-dark);
+  --tab-active-light: var(--accent-primary-light);
+  --tab-active-dark: var(--accent-primary-dark);
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-primary-light);
+  color: var(--text-primary-light);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+[data-theme="dark"] body {
+  background-color: var(--bg-primary-dark);
+  color: var(--text-primary-dark);
+}
+
+/* Main App Container */
+.app-container {
+  width: 100%;
+  max-width: 480px;
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-sizing: border-box;
+  background-color: var(--bg-primary-light);
+}
+
+[data-theme="dark"] .app-container {
+  background-color: var(--bg-primary-dark);
+}
+
+.main-content {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 60px; /* Space for bottom tab bar */
+}
+
+/* Mobile specific adjustments */
+@media screen and (max-width: 480px) {
+  .app-container {
+    max-width: 100%;
+  }
+}

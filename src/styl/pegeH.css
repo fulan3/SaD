@@ -1,0 +1,201 @@
+/* Gaya khusus untuk HomePage v4 (Glassmorphism UI/UX - welcome-section) */
+.home-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  text-align: center;
+}
+
+.greeting-text {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 20px 0 10px 0;
+  color: var(--text-color-light);
+  background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-theme="dark"] .greeting-text {
+  color: var(--text-color-dark);
+}
+
+.divider-line {
+  width: 70%;
+  height: 1px;
+  margin: 0 auto 20px auto;
+  background: linear-gradient(90deg, transparent, var(--tab-active-light, #a6c1ee), transparent);
+  opacity: 0.5;
+}
+
+.rotating-image-container {
+  margin: 20px auto;
+  position: relative;
+}
+
+.rotating-icon {
+  width: 120px; /* Slightly larger */
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.1s linear;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.15); /* Softer shadow */
+}
+[data-theme="dark"] .rotating-icon {
+  box-shadow: 0 5px 25px rgba(100,100,100,0.1);
+}
+
+.welcome-section {
+  margin: 16px; /* Adjusted margin for better glass card spacing */
+  padding: 20px;
+  text-align: center;
+  /* Glassmorphism effect with background image */
+  background-color: rgba(255, 255, 255, 0.15); /* Keep for blur tint */
+  background-image: url('https://i.imgur.com/g0t6M7v.jpeg'); /* Placeholder gaming image */
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay; /* Blend the image with the background-color */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+[data-theme="dark"] .welcome-section {
+  background-color: rgba(0, 0, 0, 0.25); /* Keep for blur tint */
+  background-image: url('https://i.imgur.com/g0t6M7v.jpeg'); /* Same image */
+  background-blend-mode: overlay;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.welcome-title {
+  font-size: 23px; /* Larger title */
+  font-weight: 700;
+  color: var(--text-color-light);
+  margin: 0 0 9px 0;
+  background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+[data-theme="dark"] .welcome-title {
+  color: var(--text-color-dark);
+}
+
+.welcome-subtitle {
+  font-size: 11px; /* Larger subtitle */
+  color: #8e8e8e;
+  margin: 0;
+}
+
+.content-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+/* Common card style with Glassmorphism */
+.content-card, .mobile-legend-info {
+  background: rgba(255, 255, 255, 0.15); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Glass effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+  border-radius: 12px; /* Consistent card radius */
+  padding: 20px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Softer shadow */
+}
+[data-theme="dark"] .content-card, [data-theme="dark"] .mobile-legend-info {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.content-card:hover, .mobile-legend-info:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(0,0,0,0.12);
+}
+[data-theme="dark"] .content-card:hover, [data-theme="dark"] .mobile-legend-info:hover {
+  box-shadow: 0 6px 25px rgba(0,0,0,0.25);
+}
+
+.content-card h3, .mobile-legend-info h3 {
+  margin: 0 0 12px 0;
+  color: var(--text-color-light);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+}
+[data-theme="dark"] .content-card h3, [data-theme="dark"] .mobile-legend-info h3 {
+  color: var(--text-color-dark);
+}
+
+.content-card p {
+  margin: 0;
+  color: #8e8e8e;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.mobile-legend-info {
+  margin: 20px 0;
+}
+
+.mobile-legend-info h3 {
+  text-align: center;
+  justify-content: center;
+}
+
+.mobile-legend-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-legend-info li {
+  position: relative;
+  padding: 10px 0 10px 30px;
+  margin-bottom: 5px;
+  text-align: left;
+  color: var(--text-color-light);
+  border-bottom: 1px solid rgba(0,0,0,0.1); /* Subtle separator for glass */
+  transition: all 0.3s ease;
+  font-size: 15px;
+}
+[data-theme="dark"] .mobile-legend-info li {
+  color: var(--text-color-dark);
+  border-bottom-color: rgba(255,255,255,0.1);
+}
+
+.mobile-legend-info li:last-child {
+  border-bottom: none;
+}
+
+.mobile-legend-info li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--tab-active-light);
+  line-height: 1;
+}
+
+.mobile-legend-info li:hover {
+  transform: translateX(5px);
+  color: var(--tab-active-light);
+  background-color: rgba(0,0,0,0.02);
+}
+[data-theme="dark"] .mobile-legend-info li:hover {
+  color: var(--tab-active-dark);
+  background-color: rgba(255,255,255,0.04);
+}
