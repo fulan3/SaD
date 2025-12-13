@@ -49,46 +49,31 @@
 }
 
 .welcome-section {
-  margin: 16px; /* Adjusted margin for better glass card spacing */
+  margin: 16px;
   padding: 20px;
   text-align: center;
-  /* Glassmorphism effect with background image */
-  background-color: rgba(255, 255, 255, 0.15); /* Keep for blur tint */
-  background-image: url('https://i.imgur.com/g0t6M7v.jpeg'); /* Placeholder gaming image */
-  background-size: cover;
-  background-position: center;
-  background-blend-mode: overlay; /* Blend the image with the background-color */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 [data-theme="dark"] .welcome-section {
-  background-color: rgba(0, 0, 0, 0.25); /* Keep for blur tint */
-  background-image: url('https://i.imgur.com/g0t6M7v.jpeg'); /* Same image */
-  background-blend-mode: overlay;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  background-color: #333333;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .welcome-title {
-  font-size: 23px; /* Larger title */
+  font-size: 23px;
   font-weight: 700;
-  color: var(--text-color-light);
+  color: #333333;
   margin: 0 0 9px 0;
-  background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 [data-theme="dark"] .welcome-title {
-  color: var(--text-color-dark);
+  color: #ffffff;
 }
 
 .welcome-subtitle {
-  font-size: 11px; /* Larger subtitle */
-  color: #8e8e8e;
+  font-size: 15px;
+  color: #666666;
   margin: 0;
 }
 
